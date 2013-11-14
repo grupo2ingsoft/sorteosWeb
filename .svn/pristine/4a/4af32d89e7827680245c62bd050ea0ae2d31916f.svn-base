@@ -1,0 +1,62 @@
+
+package views.html
+
+import play.templates._
+import play.templates.TemplateMagic._
+
+import play.api.templates._
+import play.api.templates.PlayMagic._
+import models._
+import controllers._
+import java.lang._
+import java.util._
+import scala.collection.JavaConversions._
+import scala.collection.JavaConverters._
+import play.api.i18n._
+import play.core.j.PlayMagicForJava._
+import play.mvc._
+import play.data._
+import play.api.data.Field
+import play.mvc.Http.Context.Implicit._
+import views.html._
+/**/
+object index extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template0[play.api.templates.HtmlFormat.Appendable] {
+
+    /**/
+    def apply():play.api.templates.HtmlFormat.Appendable = {
+        _display_ {
+
+Seq[Any](_display_(Seq[Any](/*1.2*/main(Html("Nueva aplicacion de Sorteos"))/*1.43*/ {_display_(Seq[Any](format.raw/*1.45*/("""
+<h3><a href=""""),_display_(Seq[Any](/*2.15*/routes/*2.21*/.Sorteos.blank)),format.raw/*2.35*/("""">Sorteos</a></h3>
+<p>
+Crear y gestionar los sorteos
+</p>
+<h3><a href=""""),_display_(Seq[Any](/*6.15*/routes/*6.21*/.Participantes.blank)),format.raw/*6.41*/("""">Participantes</a></h3>
+<p>
+Inscribir participantes a los sorteos
+</p>
+<h3><a href=""""),_display_(Seq[Any](/*10.15*/routes/*10.21*/.Seguridad.blank)),format.raw/*10.37*/("""">Seguridad</a></h3>
+<p>
+Mantenimiento de usuarios
+</p>
+""")))})),format.raw/*14.2*/("""
+"""))}
+    }
+    
+    def render(): play.api.templates.HtmlFormat.Appendable = apply()
+    
+    def f:(() => play.api.templates.HtmlFormat.Appendable) = () => apply()
+    
+    def ref: this.type = this
+
+}
+                /*
+                    -- GENERATED --
+                    DATE: Wed Nov 13 22:41:23 COT 2013
+                    SOURCE: C:/Users/AlvaroTai/Desktop/sorteosWeb/app/views/index.scala.html
+                    HASH: 7896a06b36f224abb455d009a5eb7a6e6cfca70b
+                    MATRIX: 864->1|913->42|952->44|1002->59|1016->65|1051->79|1158->151|1172->157|1213->177|1335->263|1350->269|1388->285|1476->342
+                    LINES: 29->1|29->1|29->1|30->2|30->2|30->2|34->6|34->6|34->6|38->10|38->10|38->10|42->14
+                    -- GENERATED --
+                */
+            

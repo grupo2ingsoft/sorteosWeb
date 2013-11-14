@@ -1,0 +1,60 @@
+
+package views.html.seguridad
+
+import play.templates._
+import play.templates.TemplateMagic._
+
+import play.api.templates._
+import play.api.templates.PlayMagic._
+import models._
+import controllers._
+import java.lang._
+import java.util._
+import scala.collection.JavaConversions._
+import scala.collection.JavaConverters._
+import play.api.i18n._
+import play.core.j.PlayMagicForJava._
+import play.mvc._
+import play.data._
+import play.api.data.Field
+import play.mvc.Http.Context.Implicit._
+import views.html._
+/**/
+object seguridad extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template0[play.api.templates.HtmlFormat.Appendable] {
+
+    /**/
+    def apply():play.api.templates.HtmlFormat.Appendable = {
+        _display_ {
+
+Seq[Any](_display_(Seq[Any](/*1.2*/main(Html("Gestion de seguridad"))/*1.36*/ {_display_(Seq[Any](format.raw/*1.38*/("""
+<p><h3>Gestion de Seguridad</h3></p>
+"""),_display_(Seq[Any](/*3.2*/if(flash.containsKey("success"))/*3.34*/ {_display_(Seq[Any](format.raw/*3.36*/("""
+<div class="alert-message warning">
+<strong>Hecho.</strong> """),_display_(Seq[Any](/*5.26*/flash/*5.31*/.get("success"))),format.raw/*5.46*/("""
+</div>
+""")))})),format.raw/*7.2*/("""
+<h5><a href=""""),_display_(Seq[Any](/*8.15*/routes/*8.21*/.Seguridad.newUser)),format.raw/*8.39*/("""">Nuevo usuario</a></h5>
+<h5><a href=""""),_display_(Seq[Any](/*9.15*/routes/*9.21*/.Seguridad.list)),format.raw/*9.36*/("""">Listar usuarios</a></h5>
+<h5><a href=""""),_display_(Seq[Any](/*10.15*/routes/*10.21*/.Seguridad.login)),format.raw/*10.37*/("""">Inicio de sesion</a></h5>
+<h5><a href=""""),_display_(Seq[Any](/*11.15*/routes/*11.21*/.Seguridad.logout)),format.raw/*11.38*/("""">Cerrar sesion</a></h5>
+<br/>
+""")))})))}
+    }
+    
+    def render(): play.api.templates.HtmlFormat.Appendable = apply()
+    
+    def f:(() => play.api.templates.HtmlFormat.Appendable) = () => apply()
+    
+    def ref: this.type = this
+
+}
+                /*
+                    -- GENERATED --
+                    DATE: Wed Nov 13 22:41:23 COT 2013
+                    SOURCE: C:/Users/AlvaroTai/Desktop/sorteosWeb/app/views/seguridad/seguridad.scala.html
+                    HASH: 2812a08be48968b0e4177193566a355c99199875
+                    MATRIX: 878->1|920->35|959->37|1034->78|1074->110|1113->112|1212->176|1225->181|1261->196|1302->207|1353->223|1367->229|1406->247|1481->287|1495->293|1531->308|1609->350|1624->356|1662->372|1741->415|1756->421|1795->438
+                    LINES: 29->1|29->1|29->1|31->3|31->3|31->3|33->5|33->5|33->5|35->7|36->8|36->8|36->8|37->9|37->9|37->9|38->10|38->10|38->10|39->11|39->11|39->11
+                    -- GENERATED --
+                */
+            

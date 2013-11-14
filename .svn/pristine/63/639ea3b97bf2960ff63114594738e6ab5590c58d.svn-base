@@ -1,0 +1,57 @@
+
+package views.html.participantes
+
+import play.templates._
+import play.templates.TemplateMagic._
+
+import play.api.templates._
+import play.api.templates.PlayMagic._
+import models._
+import controllers._
+import java.lang._
+import java.util._
+import scala.collection.JavaConversions._
+import scala.collection.JavaConverters._
+import play.api.i18n._
+import play.core.j.PlayMagicForJava._
+import play.mvc._
+import play.data._
+import play.api.data.Field
+import play.mvc.Http.Context.Implicit._
+import views.html._
+/**/
+object participantes extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template0[play.api.templates.HtmlFormat.Appendable] {
+
+    /**/
+    def apply():play.api.templates.HtmlFormat.Appendable = {
+        _display_ {
+
+Seq[Any](_display_(Seq[Any](/*1.2*/main(Html("Gestion de participantes"))/*1.40*/ {_display_(Seq[Any](format.raw/*1.42*/("""
+<p><h3>Gestion de Participantes</h3></p>
+"""),_display_(Seq[Any](/*3.2*/if(flash.containsKey("success"))/*3.34*/ {_display_(Seq[Any](format.raw/*3.36*/("""
+<div class="alert-message warning">
+<strong>Hecho.</strong> """),_display_(Seq[Any](/*5.26*/flash/*5.31*/.get("success"))),format.raw/*5.46*/("""
+</div>
+""")))})),format.raw/*7.2*/("""
+<h5><a href=""""),_display_(Seq[Any](/*8.15*/routes/*8.21*/.Participantes.newParticipante)),format.raw/*8.51*/("""">Nuevo Participante</a></h5>
+<br/>
+""")))})))}
+    }
+    
+    def render(): play.api.templates.HtmlFormat.Appendable = apply()
+    
+    def f:(() => play.api.templates.HtmlFormat.Appendable) = () => apply()
+    
+    def ref: this.type = this
+
+}
+                /*
+                    -- GENERATED --
+                    DATE: Wed Nov 13 22:41:23 COT 2013
+                    SOURCE: C:/Users/AlvaroTai/Desktop/sorteosWeb/app/views/participantes/participantes.scala.html
+                    HASH: b86f036d1cc2c6bc9f22aba563d9a88d27ab3a9b
+                    MATRIX: 886->1|932->39|971->41|1050->86|1090->118|1129->120|1228->184|1241->189|1277->204|1318->215|1369->231|1383->237|1434->267
+                    LINES: 29->1|29->1|29->1|31->3|31->3|31->3|33->5|33->5|33->5|35->7|36->8|36->8|36->8
+                    -- GENERATED --
+                */
+            

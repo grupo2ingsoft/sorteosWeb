@@ -1,0 +1,28 @@
+// @SOURCE:C:/Users/AlvaroTai/Desktop/sorteosWeb/conf/routes
+// @HASH:eb6f2e7f4b87af4ce7cf50bd5b95ddca41d1f92c
+// @DATE:Wed Nov 13 22:46:26 COT 2013
+
+package controllers;
+
+public class routes {
+public static final controllers.ReverseAssets Assets = new controllers.ReverseAssets();
+public static final controllers.ReverseSorteos Sorteos = new controllers.ReverseSorteos();
+public static final controllers.ReverseSeguridad Seguridad = new controllers.ReverseSeguridad();
+public static final controllers.ReverseParticipantes Participantes = new controllers.ReverseParticipantes();
+public static final controllers.ReverseApplication Application = new controllers.ReverseApplication();
+public static class javascript {
+public static final controllers.javascript.ReverseAssets Assets = new controllers.javascript.ReverseAssets();
+public static final controllers.javascript.ReverseSorteos Sorteos = new controllers.javascript.ReverseSorteos();
+public static final controllers.javascript.ReverseSeguridad Seguridad = new controllers.javascript.ReverseSeguridad();
+public static final controllers.javascript.ReverseParticipantes Participantes = new controllers.javascript.ReverseParticipantes();
+public static final controllers.javascript.ReverseApplication Application = new controllers.javascript.ReverseApplication();
+}
+public static class ref {
+public static final controllers.ref.ReverseAssets Assets = new controllers.ref.ReverseAssets();
+public static final controllers.ref.ReverseSorteos Sorteos = new controllers.ref.ReverseSorteos();
+public static final controllers.ref.ReverseSeguridad Seguridad = new controllers.ref.ReverseSeguridad();
+public static final controllers.ref.ReverseParticipantes Participantes = new controllers.ref.ReverseParticipantes();
+public static final controllers.ref.ReverseApplication Application = new controllers.ref.ReverseApplication();
+}
+}
+          

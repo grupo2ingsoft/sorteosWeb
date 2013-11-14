@@ -1,0 +1,58 @@
+
+package views.html.sorteos
+
+import play.templates._
+import play.templates.TemplateMagic._
+
+import play.api.templates._
+import play.api.templates.PlayMagic._
+import models._
+import controllers._
+import java.lang._
+import java.util._
+import scala.collection.JavaConversions._
+import scala.collection.JavaConverters._
+import play.api.i18n._
+import play.core.j.PlayMagicForJava._
+import play.mvc._
+import play.data._
+import play.api.data.Field
+import play.mvc.Http.Context.Implicit._
+import views.html._
+/**/
+object sorteos extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template0[play.api.templates.HtmlFormat.Appendable] {
+
+    /**/
+    def apply():play.api.templates.HtmlFormat.Appendable = {
+        _display_ {
+
+Seq[Any](_display_(Seq[Any](/*1.2*/main(Html("Gestion de sorteo"))/*1.33*/ {_display_(Seq[Any](format.raw/*1.35*/("""
+<p><h3>Gestion de Sorteo</h3></p>
+"""),_display_(Seq[Any](/*3.2*/if(flash.containsKey("success"))/*3.34*/ {_display_(Seq[Any](format.raw/*3.36*/("""
+<div class="alert-message warning">
+<strong>Hecho.</strong> """),_display_(Seq[Any](/*5.26*/flash/*5.31*/.get("success"))),format.raw/*5.46*/("""
+</div>
+""")))})),format.raw/*7.2*/("""
+<h5><a href=""""),_display_(Seq[Any](/*8.15*/routes/*8.21*/.Sorteos.newSorteo)),format.raw/*8.39*/("""">Nuevo sorteo</a></h5>
+<h5><a href=""""),_display_(Seq[Any](/*9.15*/routes/*9.21*/.Sorteos.list)),format.raw/*9.34*/("""">Listar sorteos</a></h5>
+<br/>
+""")))})))}
+    }
+    
+    def render(): play.api.templates.HtmlFormat.Appendable = apply()
+    
+    def f:(() => play.api.templates.HtmlFormat.Appendable) = () => apply()
+    
+    def ref: this.type = this
+
+}
+                /*
+                    -- GENERATED --
+                    DATE: Wed Nov 13 22:41:24 COT 2013
+                    SOURCE: C:/Users/AlvaroTai/Desktop/sorteosWeb/app/views/sorteos/sorteos.scala.html
+                    HASH: bc773efe83607f1440e8f9b17dd0e651530e9e5e
+                    MATRIX: 874->1|913->32|952->34|1024->72|1064->104|1103->106|1202->170|1215->175|1251->190|1292->201|1343->217|1357->223|1396->241|1470->280|1484->286|1518->299
+                    LINES: 29->1|29->1|29->1|31->3|31->3|31->3|33->5|33->5|33->5|35->7|36->8|36->8|36->8|37->9|37->9|37->9
+                    -- GENERATED --
+                */
+            

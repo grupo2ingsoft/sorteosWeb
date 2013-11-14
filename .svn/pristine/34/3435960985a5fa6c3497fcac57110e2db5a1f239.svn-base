@@ -1,0 +1,65 @@
+
+package views.html.participantes
+
+import play.templates._
+import play.templates.TemplateMagic._
+
+import play.api.templates._
+import play.api.templates.PlayMagic._
+import models._
+import controllers._
+import java.lang._
+import java.util._
+import scala.collection.JavaConversions._
+import scala.collection.JavaConverters._
+import play.api.i18n._
+import play.core.j.PlayMagicForJava._
+import play.mvc._
+import play.data._
+import play.api.data.Field
+import play.mvc.Http.Context.Implicit._
+import views.html._
+/**/
+object createForm extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template1[Form[Participante],play.api.templates.HtmlFormat.Appendable] {
+
+    /**/
+    def apply/*1.2*/(participanteForm: Form[Participante]):play.api.templates.HtmlFormat.Appendable = {
+        _display_ {import helper._
+
+implicit def /*3.2*/implicitFieldConstructor/*3.26*/ = {{ FieldConstructor(twitterBootstrapInput.render) }};
+Seq[Any](format.raw/*1.40*/("""
+"""),format.raw/*3.80*/("""
+"""),_display_(Seq[Any](/*4.2*/main(Html("Creacion de nuevo participante"))/*4.46*/ {_display_(Seq[Any](format.raw/*4.48*/("""
+    <h3>Agregar participante</h3>
+    """),_display_(Seq[Any](/*6.6*/form(routes.Participantes.save())/*6.39*/ {_display_(Seq[Any](format.raw/*6.41*/("""
+        <fieldset>
+        """),_display_(Seq[Any](/*8.10*/inputText(participanteForm("numParticipante"), '_label -> "Numero de participante"))),format.raw/*8.93*/("""
+        """),_display_(Seq[Any](/*9.10*/inputText(participanteForm("codSorteo"), '_label -> "Codigo de sorteo"))),format.raw/*9.81*/("""
+        """),_display_(Seq[Any](/*10.10*/inputText(participanteForm("numPersona"), '_label -> "Numero de persona"))),format.raw/*10.83*/("""
+        
+        </fieldset>
+    <div class="actions">
+        <input type="submit" value="Crea participante" class="btn primary"> or
+        <a href=""""),_display_(Seq[Any](/*15.19*/routes/*15.25*/.Sorteos.blank())),format.raw/*15.41*/("""" class="btn">Cancel</a>
+    </div>
+    """)))})),format.raw/*17.6*/("""
+""")))})))}
+    }
+    
+    def render(participanteForm:Form[Participante]): play.api.templates.HtmlFormat.Appendable = apply(participanteForm)
+    
+    def f:((Form[Participante]) => play.api.templates.HtmlFormat.Appendable) = (participanteForm) => apply(participanteForm)
+    
+    def ref: this.type = this
+
+}
+                /*
+                    -- GENERATED --
+                    DATE: Wed Nov 13 22:41:23 COT 2013
+                    SOURCE: C:/Users/AlvaroTai/Desktop/sorteosWeb/app/views/participantes/createForm.scala.html
+                    HASH: 9593141ba1cf6519234ab917b68ef10001d48b6d
+                    MATRIX: 805->1|946->60|978->84|1062->39|1091->138|1128->141|1180->185|1219->187|1295->229|1336->262|1375->264|1441->295|1545->378|1591->389|1683->460|1730->471|1825->544|2019->702|2034->708|2072->724|2146->767
+                    LINES: 26->1|29->3|29->3|30->1|31->3|32->4|32->4|32->4|34->6|34->6|34->6|36->8|36->8|37->9|37->9|38->10|38->10|43->15|43->15|43->15|45->17
+                    -- GENERATED --
+                */
+            

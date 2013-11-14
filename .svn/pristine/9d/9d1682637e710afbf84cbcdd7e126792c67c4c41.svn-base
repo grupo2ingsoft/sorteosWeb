@@ -1,0 +1,63 @@
+
+package views.html.sorteos
+
+import play.templates._
+import play.templates.TemplateMagic._
+
+import play.api.templates._
+import play.api.templates.PlayMagic._
+import models._
+import controllers._
+import java.lang._
+import java.util._
+import scala.collection.JavaConversions._
+import scala.collection.JavaConverters._
+import play.api.i18n._
+import play.core.j.PlayMagicForJava._
+import play.mvc._
+import play.data._
+import play.api.data.Field
+import play.mvc.Http.Context.Implicit._
+import views.html._
+/**/
+object createForm extends BaseScalaTemplate[play.api.templates.HtmlFormat.Appendable,Format[play.api.templates.HtmlFormat.Appendable]](play.api.templates.HtmlFormat) with play.api.templates.Template1[Form[Sorteo],play.api.templates.HtmlFormat.Appendable] {
+
+    /**/
+    def apply/*1.2*/(sorteoForm: Form[Sorteo]):play.api.templates.HtmlFormat.Appendable = {
+        _display_ {import helper._
+
+implicit def /*3.2*/implicitFieldConstructor/*3.26*/ = {{ FieldConstructor(twitterBootstrapInput.render) }};
+Seq[Any](format.raw/*1.28*/("""
+"""),format.raw/*3.80*/("""
+"""),_display_(Seq[Any](/*4.2*/main(Html("Creacion de nuevo sorteo"))/*4.40*/ {_display_(Seq[Any](format.raw/*4.42*/("""
+    <h3>Agregar sorteo</h3>
+    """),_display_(Seq[Any](/*6.6*/form(routes.Sorteos.save())/*6.33*/ {_display_(Seq[Any](format.raw/*6.35*/("""
+        <fieldset>
+        """),_display_(Seq[Any](/*8.10*/inputText(sorteoForm("codSorteo"), '_label -> "Codigo de sorteo"))),format.raw/*8.75*/("""
+        """),_display_(Seq[Any](/*9.10*/inputText(sorteoForm("nomSorteo"), '_label -> "Nombre de sorteo"))),format.raw/*9.75*/("""
+        </fieldset>
+    <div class="actions">
+        <input type="submit" value="Crea sorteo" class="btn primary"> or
+        <a href=""""),_display_(Seq[Any](/*13.19*/routes/*13.25*/.Sorteos.blank())),format.raw/*13.41*/("""" class="btn">Cancel</a>
+    </div>
+    """)))})),format.raw/*15.6*/("""
+""")))})))}
+    }
+    
+    def render(sorteoForm:Form[Sorteo]): play.api.templates.HtmlFormat.Appendable = apply(sorteoForm)
+    
+    def f:((Form[Sorteo]) => play.api.templates.HtmlFormat.Appendable) = (sorteoForm) => apply(sorteoForm)
+    
+    def ref: this.type = this
+
+}
+                /*
+                    -- GENERATED --
+                    DATE: Wed Nov 13 22:41:24 COT 2013
+                    SOURCE: C:/Users/AlvaroTai/Desktop/sorteosWeb/app/views/sorteos/createForm.scala.html
+                    HASH: 7657d4001e0641b7b8bde7a1cceeed364b3242c0
+                    MATRIX: 793->1|922->48|954->72|1038->27|1067->126|1104->129|1150->167|1189->169|1259->205|1294->232|1333->234|1399->265|1485->330|1531->341|1617->406|1795->548|1810->554|1848->570|1922->613
+                    LINES: 26->1|29->3|29->3|30->1|31->3|32->4|32->4|32->4|34->6|34->6|34->6|36->8|36->8|37->9|37->9|41->13|41->13|41->13|43->15
+                    -- GENERATED --
+                */
+            

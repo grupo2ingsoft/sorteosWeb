@@ -1,0 +1,220 @@
+// @SOURCE:C:/Users/AlvaroTai/Desktop/sorteosWeb/conf/routes
+// @HASH:eb6f2e7f4b87af4ce7cf50bd5b95ddca41d1f92c
+// @DATE:Wed Nov 13 22:46:26 COT 2013
+
+
+import play.core._
+import play.core.Router._
+import play.core.j._
+
+import play.api.mvc._
+import play.libs.F
+
+import Router.queryString
+
+object Routes extends Router.Routes {
+
+private var _prefix = "/"
+
+def setPrefix(prefix: String) {
+  _prefix = prefix
+  List[(String,Routes)]().foreach {
+    case (p, router) => router.setPrefix(prefix + (if(prefix.endsWith("/")) "" else "/") + p)
+  }
+}
+
+def prefix = _prefix
+
+lazy val defaultPrefix = { if(Routes.prefix.endsWith("/")) "" else "/" }
+
+
+// @LINE:6
+private[this] lazy val controllers_Application_index0 = Route("GET", PathPattern(List(StaticPart(Routes.prefix))))
+        
+
+// @LINE:9
+private[this] lazy val controllers_Sorteos_blank1 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("sorteos"))))
+        
+
+// @LINE:11
+private[this] lazy val controllers_Participantes_blank2 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("participantes"))))
+        
+
+// @LINE:13
+private[this] lazy val controllers_Seguridad_blank3 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("seguridad"))))
+        
+
+// @LINE:15
+private[this] lazy val controllers_Seguridad_newUser4 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("seguridad/new"))))
+        
+
+// @LINE:16
+private[this] lazy val controllers_Seguridad_list5 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("seguridad/list"))))
+        
+
+// @LINE:17
+private[this] lazy val controllers_Seguridad_login6 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("seguridad/login"))))
+        
+
+// @LINE:18
+private[this] lazy val controllers_Seguridad_logout7 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("seguridad/logout"))))
+        
+
+// @LINE:19
+private[this] lazy val controllers_Seguridad_save8 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("seguridad/save"))))
+        
+
+// @LINE:23
+private[this] lazy val controllers_Sorteos_newSorteo9 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("sorteos/new"))))
+        
+
+// @LINE:24
+private[this] lazy val controllers_Sorteos_list10 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("sorteos/list"))))
+        
+
+// @LINE:25
+private[this] lazy val controllers_Sorteos_save11 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("sorteos/save"))))
+        
+
+// @LINE:28
+private[this] lazy val controllers_Participantes_newParticipante12 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("participantes/new"))))
+        
+
+// @LINE:29
+private[this] lazy val controllers_Participantes_save13 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("participantes/save"))))
+        
+
+// @LINE:32
+private[this] lazy val controllers_Assets_at14 = Route("GET", PathPattern(List(StaticPart(Routes.prefix),StaticPart(Routes.defaultPrefix),StaticPart("assets/"),DynamicPart("file", """.+""",false))))
+        
+def documentation = List(("""GET""", prefix,"""controllers.Application.index()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """sorteos""","""controllers.Sorteos.blank()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """participantes""","""controllers.Participantes.blank()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """seguridad""","""controllers.Seguridad.blank()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """seguridad/new""","""controllers.Seguridad.newUser()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """seguridad/list""","""controllers.Seguridad.list()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """seguridad/login""","""controllers.Seguridad.login()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """seguridad/logout""","""controllers.Seguridad.logout()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """seguridad/save""","""controllers.Seguridad.save()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """sorteos/new""","""controllers.Sorteos.newSorteo()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """sorteos/list""","""controllers.Sorteos.list()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """sorteos/save""","""controllers.Sorteos.save()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """participantes/new""","""controllers.Participantes.newParticipante()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """participantes/save""","""controllers.Participantes.save()"""),("""GET""", prefix + (if(prefix.endsWith("/")) "" else "/") + """assets/$file<.+>""","""controllers.Assets.at(path:String = "/public", file:String)""")).foldLeft(List.empty[(String,String,String)]) { (s,e) => e.asInstanceOf[Any] match {
+  case r @ (_,_,_) => s :+ r.asInstanceOf[(String,String,String)]
+  case l => s ++ l.asInstanceOf[List[(String,String,String)]] 
+}}
+      
+
+def routes:PartialFunction[RequestHeader,Handler] = {
+
+// @LINE:6
+case controllers_Application_index0(params) => {
+   call { 
+        invokeHandler(controllers.Application.index(), HandlerDef(this, "controllers.Application", "index", Nil,"GET", """ Home page""", Routes.prefix + """"""))
+   }
+}
+        
+
+// @LINE:9
+case controllers_Sorteos_blank1(params) => {
+   call { 
+        invokeHandler(controllers.Sorteos.blank(), HandlerDef(this, "controllers.Sorteos", "blank", Nil,"GET", """ Sorteos""", Routes.prefix + """sorteos"""))
+   }
+}
+        
+
+// @LINE:11
+case controllers_Participantes_blank2(params) => {
+   call { 
+        invokeHandler(controllers.Participantes.blank(), HandlerDef(this, "controllers.Participantes", "blank", Nil,"GET", """ Participantes""", Routes.prefix + """participantes"""))
+   }
+}
+        
+
+// @LINE:13
+case controllers_Seguridad_blank3(params) => {
+   call { 
+        invokeHandler(controllers.Seguridad.blank(), HandlerDef(this, "controllers.Seguridad", "blank", Nil,"GET", """ Seguridad""", Routes.prefix + """seguridad"""))
+   }
+}
+        
+
+// @LINE:15
+case controllers_Seguridad_newUser4(params) => {
+   call { 
+        invokeHandler(controllers.Seguridad.newUser(), HandlerDef(this, "controllers.Seguridad", "newUser", Nil,"GET", """""", Routes.prefix + """seguridad/new"""))
+   }
+}
+        
+
+// @LINE:16
+case controllers_Seguridad_list5(params) => {
+   call { 
+        invokeHandler(controllers.Seguridad.list(), HandlerDef(this, "controllers.Seguridad", "list", Nil,"GET", """""", Routes.prefix + """seguridad/list"""))
+   }
+}
+        
+
+// @LINE:17
+case controllers_Seguridad_login6(params) => {
+   call { 
+        invokeHandler(controllers.Seguridad.login(), HandlerDef(this, "controllers.Seguridad", "login", Nil,"GET", """""", Routes.prefix + """seguridad/login"""))
+   }
+}
+        
+
+// @LINE:18
+case controllers_Seguridad_logout7(params) => {
+   call { 
+        invokeHandler(controllers.Seguridad.logout(), HandlerDef(this, "controllers.Seguridad", "logout", Nil,"GET", """""", Routes.prefix + """seguridad/logout"""))
+   }
+}
+        
+
+// @LINE:19
+case controllers_Seguridad_save8(params) => {
+   call { 
+        invokeHandler(controllers.Seguridad.save(), HandlerDef(this, "controllers.Seguridad", "save", Nil,"GET", """""", Routes.prefix + """seguridad/save"""))
+   }
+}
+        
+
+// @LINE:23
+case controllers_Sorteos_newSorteo9(params) => {
+   call { 
+        invokeHandler(controllers.Sorteos.newSorteo(), HandlerDef(this, "controllers.Sorteos", "newSorteo", Nil,"GET", """""", Routes.prefix + """sorteos/new"""))
+   }
+}
+        
+
+// @LINE:24
+case controllers_Sorteos_list10(params) => {
+   call { 
+        invokeHandler(controllers.Sorteos.list(), HandlerDef(this, "controllers.Sorteos", "list", Nil,"GET", """""", Routes.prefix + """sorteos/list"""))
+   }
+}
+        
+
+// @LINE:25
+case controllers_Sorteos_save11(params) => {
+   call { 
+        invokeHandler(controllers.Sorteos.save(), HandlerDef(this, "controllers.Sorteos", "save", Nil,"GET", """""", Routes.prefix + """sorteos/save"""))
+   }
+}
+        
+
+// @LINE:28
+case controllers_Participantes_newParticipante12(params) => {
+   call { 
+        invokeHandler(controllers.Participantes.newParticipante(), HandlerDef(this, "controllers.Participantes", "newParticipante", Nil,"GET", """""", Routes.prefix + """participantes/new"""))
+   }
+}
+        
+
+// @LINE:29
+case controllers_Participantes_save13(params) => {
+   call { 
+        invokeHandler(controllers.Participantes.save(), HandlerDef(this, "controllers.Participantes", "save", Nil,"GET", """""", Routes.prefix + """participantes/save"""))
+   }
+}
+        
+
+// @LINE:32
+case controllers_Assets_at14(params) => {
+   call(Param[String]("path", Right("/public")), params.fromPath[String]("file", None)) { (path, file) =>
+        invokeHandler(controllers.Assets.at(path, file), HandlerDef(this, "controllers.Assets", "at", Seq(classOf[String], classOf[String]),"GET", """ Map static resources from the /public folder to the /assets URL path""", Routes.prefix + """assets/$file<.+>"""))
+   }
+}
+        
+}
+
+}
+     

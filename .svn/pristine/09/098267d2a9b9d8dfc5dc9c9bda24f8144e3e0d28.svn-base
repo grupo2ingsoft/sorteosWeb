@@ -1,0 +1,21 @@
+2013-11-13 22:41:06,906 - [INFO] - from play in pool-4-thread-2 
+Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+
+2013-11-13 22:41:44,641 - [INFO] - from play in play-internal-execution-context-1 
+datasource [jdbc:mysql://localhost/sorteoweb] bound to JNDI as DefaultDS
+
+2013-11-13 22:41:44,995 - [INFO] - from play in play-internal-execution-context-1 
+database [default] connected at jdbc:mysql://localhost/sorteoweb
+
+2013-11-13 22:41:46,627 - [INFO] - from play in play-internal-execution-context-1 
+Application started (Dev)
+
+2013-11-13 22:46:35,789 - [INFO] - from play in play-internal-execution-context-2 
+datasource [jdbc:mysql://localhost/sorteoweb] bound to JNDI as DefaultDS
+
+2013-11-13 22:46:35,878 - [INFO] - from play in play-internal-execution-context-2 
+database [default] connected at jdbc:mysql://localhost/sorteoweb
+
+2013-11-13 22:46:36,062 - [INFO] - from play in play-internal-execution-context-2 
+Application started (Dev)
+
